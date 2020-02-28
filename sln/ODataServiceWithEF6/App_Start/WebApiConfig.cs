@@ -20,6 +20,12 @@ namespace ODataServiceWithEF6
             var function = builder.EntityType<Product>().Collection.Function("PrimtiveFunction").Returns<List<Product>>();
 
             config.Select().Expand().Filter().OrderBy().MaxTop(null).Count();
+
+            var functions = builder.EntityType<Product>().Collection.Function("MyFunction").Returns<string>();
+            function.Parameter<int>("p1");
+            function.Parameter<int?>("p2");
+            function.CollectionParameter<int>("p3");
+
             config.MapODataServiceRoute("ODataRoute", null, builder.GetEdmModel());
         }
     }

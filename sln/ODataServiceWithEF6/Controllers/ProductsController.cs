@@ -32,5 +32,12 @@ namespace ODataServiceWithEF6.Controllers
             return db.Products;
         }
 
+        [HttpGet]
+        public List<Product> MyFunction(int p1, int? p2, [FromODataUri]IEnumerable<int> p3)
+        {
+            //return db.Products;
+            return null;
+        }
+
     }
 }

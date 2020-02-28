@@ -9,7 +9,7 @@ namespace ODataServiceWithEF6.Controllers
 {
     public class ProductsContext : DbContext
     {
-        public ProductsContext() : base("name=ProductsContext")
+        public ProductsContext() : base("name=ProductContext")
         {
             //Database.SetInitializer(new ProductInitializer());
         }
